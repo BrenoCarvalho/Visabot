@@ -39,7 +39,7 @@ class VisaBot:
         self.visa_page.open(self.schedule_url)
         self.visa_page.login(self.email, self.password)
         
-        self.verification_delay = 30
+        self.verification_delay = 5*60
         self.verification()
 
     def verification(self):
@@ -64,8 +64,12 @@ class VisaBot:
 
                     self.visa_page.calendar.next()
 
-                print(f' > Waiting {self.verification_delay} seconds...')
-                sleep(self.verification_delay)
+                print(f' > Waiting {self.verification_delay} seconds...\n')
+                
+                for sec in range(self.verification_delay, 0, -1):
+                    print(f' > {sec} seconds left.')
+                    sleep(1)
+                
                 self.visa_page.refresh()
 
             except:
