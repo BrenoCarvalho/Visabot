@@ -53,7 +53,7 @@ class VisaBot:
                     current_months = self.visa_page.calendar.current_months()
 
                     if closest_day_available != None and closest_day_available < date(2023, 3, 20):
-                        msg = f'🔔 [<strong>Alerta</strong>] Dia disponível em São Paulo: {closest_day_available.strftime("%d %B %Y")}'
+                        msg = f'🔔 [<strong>Alerta</strong>] Dia disponível em São Paulo: {closest_day_available.strftime("%d %B %Y")}\n\nAcesse: {self.schedule_url}'
                         
                         print(f'\n{msg}')
                         self.telegram_bot.send_alert(msg)
