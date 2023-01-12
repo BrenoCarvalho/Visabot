@@ -64,7 +64,7 @@ class VisaBot:
 
                     self.visa_page.calendar.next()
 
-                print(f' > Waiting {self.verification_delay} seconds...\n')
+                print(f'\n > Waiting {self.verification_delay} seconds...\n')
                 
                 for sec in range(self.verification_delay, 0, -1):
                     print(f' > {sec} seconds left.')
